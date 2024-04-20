@@ -3,7 +3,7 @@ BSRCS = fractal_bonus.c fractal_init_bonus.c fractal_moves_bonus.c burning_ship.
 NAME = fractol
 BNAME = fractol_bonus
 CC = cc
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror
 MLX_FLAGS =  -lmlx -framework OpenGL -framework AppKit
 OBJ = ${SRCS:.c=.o} 
 BOBJ = ${BSRCS:.c=.o}
@@ -19,7 +19,7 @@ $(NAME): $(OBJ)
 bonus:	$(BNAME)
 
 $(BNAME): $(BOBJ)
-	$(CC)  $(MLX_FLAGS) -o $@ $^
+	$(CC) $(FLAGS) $(MLX_FLAGS) -o $@ $^
 
 clean:
 	rm -f $(OBJ) $(BOBJ)
